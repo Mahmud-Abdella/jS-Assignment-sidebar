@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Collapsed Sidebar</title>
+    <link
+      rel="stylesheet"
+      href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <style>
+      body {
+        background-color: hsl(168, 12%, 92%);
+      }
+      #mySidebar {
+        background-color: white;
+      }
+      .sidebar {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        overflow-x: hidden;
+        padding-top: 20px;
+        transition: 0.5s;
+      }
+
+      .sidebar a {
+        background-color: white;
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+        color: #497574;
+        display: block;
+        transition: 0.3s;
+        margin-top: 30px;
+      }
+
+      img {
+        position: relative;
+        left: 0;
+        top: 0;
+        margin-bottom: 100px;
+      }
+      .sidebar .closebtn {
+        position: absolute;
+        font-family: Georgia, "Times New Roman", Times, serif;
+        font-weight: bold;
+        top: 0;
+        right: 25px;
+        font-size: 60px;
+        margin-left: 50px;
+        color: red;
+      }
+
+      .openbtn {
+        font-size: 40px;
+        cursor: pointer;
+        background-color: hsl(168, 12%, 92%);
+        color: rgb(46, 189, 202);
+        padding: 10px 15px;
+        border: none;
+        position: fixed;
+        left: 1300px;
+      }
+      .social-media {
+        margin-top: 100px;
+        position: relative;
+        bottom: 0;
+        display: flex;
+        justify-content: Center;
+        color: rgb(32, 147, 205);
+      }
+      i {
+        margin: 30px;
+        font-size: xx-large;
+      }
+      #main {
+        transition: margin-left 0.5s;
+        padding: 20px;
+      }
+
+      @media screen and (max-height: 450px) {
+        .sidebar {
+          padding-top: 15px;
+        }
+        .sidebar a {
+          font-size: 18px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+
+    <div id="mySidebar" class="sidebar">
+      <img src="pic-9.png" alt="" width="60px" height="45px" />
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+        >&times;</a
+      >
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Projects</a>
+      <a href="#">Contact</a>
+
+      <div class="social-media">
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-linkedin"></i>
+      </div>
+    </div>
+
+    <div id="main">
+      <button class="openbtn" onclick="openNav()">&#9776;</button>
+    </div>
+
+    <script>
+      function openNav() {
+        document.getElementById("mySidebar").style.width = "650px";
+        document.getElementById("main").style.marginLeft = "650px";
+      }
+      function closeNav() {
+        document.getElementById("mySidebar").style.width = "0px";
+        document.getElementById("main").style.marginLeft = "0px";
+      }
+    </script>
+  </body>
+</html>
